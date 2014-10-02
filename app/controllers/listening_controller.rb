@@ -12,10 +12,18 @@ class ListeningController < ApplicationController
 		
 		@statuses = []
 	
-		TweetStream::Client.new.track('miley') do |status, client|
+		TweetStream::Client.new.track('miley', 'cyrus') do |status, client|
   		@statuses << status.text
-  		client.stop if @statuses.size >= 10	
+  		client.stop if @statuses.size >= 25
 		end
+
+		@english_status = []
+
+		@statuses.each do |text|
+			if text.language == :english
+				@english_status << text
+			end	
+		end	
 	
 	end	
 end

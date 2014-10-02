@@ -11,6 +11,8 @@ gem 'typhoeus'
 gem 'tweetstream'
 gem 'yajl-ruby', '~> 1.2.1'
 
+gem 'whatlanguage'
+
 gem 'pry'
 
 gem 'sqlite3'
