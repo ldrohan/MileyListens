@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+    // Sets up auth token on page load for twilio integration
     getToken();
     var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzY29wZSI6InNjb3BlOmNsaWVudDpvdXRnb2luZz9hcHBTaWQ9QVBlNWIzMWRhZDQ2NTA3NTU3ZTE3ODc1OTIxYTVjYzZmZSIsImlzcyI6IkFDZjM1NTIxNWUwZjVhZGIzZTZjZDM2YTE3YWIwMWI0NWQiLCJleHAiOjE0MTI4MDc4NjJ9.qwgXB9xr25-jSDsOvOBbmfg5zZLavnGw4nosM3bakn4';
     Twilio.Device.setup(token,{"debug":true});
@@ -45,6 +46,7 @@ function getTweets() {
   			openModal(currentModal);
         sendVoiceText(currentModal, currentTweet);
         speak(currentTweet);
+        closeModal(currentModal);
   		}	else {
   			alert("Keep listening. She's out there.");
   		}
@@ -77,8 +79,9 @@ function sendVoiceText(currentModal, currentTweet) {
   });
 }
 
-// Actually speaks the tweet, in theory anyway
 
+
+// Actually speaks the tweet, in theory anyway
 function speak(currentTweet) {
   var tweetText = currentTweet;
   Twilio.Device.connect({ 'tweetText':tweetText });
@@ -89,6 +92,8 @@ function openModal(modal) {
 	$(modal).modal('show');
 }
 
-function closeModal() {
-	$("#myModal").modal('hide');
+function closeModal(modal) {
+  Twilio.Device.disconnect(function (conn) {
+    $(modal).modal('hide');
+  });
 }
