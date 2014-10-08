@@ -1,6 +1,9 @@
 class ListeningController < ApplicationController
 	respond_to :json
-
+	after_filter :set_header, only: :voice
+  include Webhookable
+  skip_before_action :verify_authenticity_token, only: :voice
+	
 	def static
 		# static page
 	end	
@@ -31,12 +34,32 @@ class ListeningController < ApplicationController
 		end
 
 		respond_with @english_status
-		# @english_status.each do |text|
-		# @response = Unirest.post "https://t2s.p.mashape.com/speech/",
-  #        headers:{"X-Mashape-Key" => "fzWccd97vMmshy215bFxmKet4v66p1nBZYRjsnYOfqMJTaJ09r"},
-  #        parameters:{"lang" => "en", :text => text }	
-  #   end     
 		
-	end	
+	end
+
+	def voice
+		account_sid = 'ACf355215e0f5adb3e6cd36a17ab01b45d'
+		auth_token = 'd5c8347d7e25a1917d0423b30c940791'
+	
+
+		# set up a client to talk to the Twilio REST API
+		@client = Twilio::REST::Client.new account_sid, auth_token
+
+		response = Twilio::TwiML::Response.new do |r|
+      r.Say params['tweets']['currentModal'].to_s
+    end
+    
+    render_twiml response
+
+	end
+
+	def token
+    capability = Twilio::Util::Capability.new('ACf355215e0f5adb3e6cd36a17ab01b45d','d5c8347d7e25a1917d0423b30c940791')
+    capability.allow_client_outgoing('APe5b31dad46507557e17875921a5cc6fe')
+    @token = capability.generate
+
+    respond_with @token
+  end
+    			
 end
 

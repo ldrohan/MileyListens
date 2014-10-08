@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get 'listening/main' => 'listening#main', as: :main
   get 'listening/static' => 'listening#static', as: :static
+  get 'listening/token' => 'listening#token', as: :token 
+
+  post 'listening/voice' => 'listening#voice', as: :voice
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
