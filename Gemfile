@@ -13,6 +13,8 @@ gem 'yajl-ruby', '~> 1.2.1'
 
 gem 'whatlanguage'
 
+gem 'unirest'
+
 gem 'pry'
 
 gem 'sqlite3'

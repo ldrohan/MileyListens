@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root 'listening#main'
+  root 'listening#static'
 
-
+  get 'listening/main' => 'listening#main', as: :main
+  get 'listening/static' => 'listening#static', as: :static
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
