@@ -1,8 +1,7 @@
 class ListeningController < ApplicationController
 	respond_to :json
 	after_filter :set_header, only: :voice
-  include Webhookable
-  skip_before_action :verify_authenticity_token, only: :voice
+	include ESpeak
 	
 	def static
 		# static page
@@ -38,28 +37,8 @@ class ListeningController < ApplicationController
 	end
 
 	def voice
-		account_sid = 'ACf355215e0f5adb3e6cd36a17ab01b45d'
-		auth_token = 'd5c8347d7e25a1917d0423b30c940791'
-	
-
-		# set up a client to talk to the Twilio REST API
-		@client = Twilio::REST::Client.new account_sid, auth_token
-
-		response = Twilio::TwiML::Response.new do |r|
-      r.Say params['tweets']['currentModal'].to_s
-    end
-    
-    render_twiml response
-
+		@speak_tweet = params['tweets']['currentModal']
+		respond_with @speak_tweet
 	end
 
-	def token
-    capability = Twilio::Util::Capability.new('ACf355215e0f5adb3e6cd36a17ab01b45d','d5c8347d7e25a1917d0423b30c940791')
-    capability.allow_client_outgoing('APe5b31dad46507557e17875921a5cc6fe')
-    @token = capability.generate
-
-    respond_with @token
-  end
-    			
-end
-
+end	

@@ -13,7 +13,7 @@ gem 'yajl-ruby', '~> 1.2.1'
 
 gem 'whatlanguage'
 
-gem 'twilio-ruby', '~> 3.12'
+gem "espeak-ruby", require: "espeak"
 
 gem 'unirest'
 

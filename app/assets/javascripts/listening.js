@@ -1,9 +1,4 @@
 $( document ).ready(function() {
-    // Sets up auth token on page load for twilio integration
-    getToken();
-    var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzY29wZSI6InNjb3BlOmNsaWVudDpvdXRnb2luZz9hcHBTaWQ9QVBlNWIzMWRhZDQ2NTA3NTU3ZTE3ODc1OTIxYTVjYzZmZSIsImlzcyI6IkFDZjM1NTIxNWUwZjVhZGIzZTZjZDM2YTE3YWIwMWI0NWQiLCJleHAiOjE0MTI4MDc4NjJ9.qwgXB9xr25-jSDsOvOBbmfg5zZLavnGw4nosM3bakn4';
-    Twilio.Device.setup(token,{"debug":true});
-
     $('button').click(function() {
     	getTweets();
     });
@@ -39,16 +34,16 @@ function getTweets() {
 	$.getJSON( "listening/main.json", function( data ) {
  	  for (var tweet in data) {
  	  	if (data !== null) {
- 	  		console.log(data[tweet]);
         var currentModal = '#myModal' + tweet;
         var currentTweet = data[tweet];
   			$('#tweets').append(modalID + tweet + modalOne + '<li>' + currentTweet + '</li>' + modalTwo);
   			openModal(currentModal);
         sendVoiceText(currentModal, currentTweet);
-        speak(currentTweet);
-        closeModal(currentModal);
+       
+        // speak(currentTweet);
+        // closeModal(currentModal);
   		}	else {
-  			alert("Keep listening. She's out there.");
+  			 alert("Keep listening. She's out there.");
   		}
   	}
   });
@@ -56,35 +51,35 @@ function getTweets() {
 
 function getToken() {
   $.getJSON( "listening/token.json", function ( data ) {
-    console.log(data);
-    return(data);
+      return(data);
     // Twilio.Device.setup(token,{"debug":true});
   });
 }
 
 // Sends current tweet to backend Twilio text to speech converter
 function sendVoiceText(currentModal, currentTweet) {
+    // speak(currentTweet);
+
   $.ajax({
-    url: ('listening/voice'),
-    method: ('post'),
-    data: {
-      "tweets": {
+      url: ('listening/voice'),
+      method: ('post'),
+      data: {
+        "tweets": {
           currentModal: currentTweet
       }
     },
     dataType: "json",
       success: function(data) {
-      console.log(data);
+        console.log(data);
     }
   });
+  closeModal(currentModal);
 }
-
-
 
 // Actually speaks the tweet, in theory anyway
 function speak(currentTweet) {
-  var tweetText = currentTweet;
-  Twilio.Device.connect({ 'tweetText':tweetText });
+  var currentTweet = currentTweet;
+  // Twilio.Device.connect({ 'currentTweet':currentTweet });
 }
 
 
@@ -92,8 +87,9 @@ function openModal(modal) {
 	$(modal).modal('show');
 }
 
+// Listens for twilio disconnect and closes Modal
 function closeModal(modal) {
-  Twilio.Device.disconnect(function (conn) {
+  setTimeout(function() {
     $(modal).modal('hide');
-  });
+  }, 5000);
 }
