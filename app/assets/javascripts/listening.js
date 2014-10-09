@@ -39,9 +39,6 @@ function getTweets() {
   			$('#tweets').append(modalID + tweet + modalOne + '<li>' + currentTweet + '</li>' + modalTwo);
   			openModal(currentModal);
         sendVoiceText(currentModal, currentTweet);
-       
-        // speak(currentTweet);
-        // closeModal(currentModal);
   		}	else {
   			 alert("Keep listening. She's out there.");
   		}
@@ -52,14 +49,10 @@ function getTweets() {
 function getToken() {
   $.getJSON( "listening/token.json", function ( data ) {
       return(data);
-    // Twilio.Device.setup(token,{"debug":true});
   });
 }
 
-// Sends current tweet to backend Twilio text to speech converter
 function sendVoiceText(currentModal, currentTweet) {
-    // speak(currentTweet);
-
   $.ajax({
       url: ('listening/voice'),
       method: ('post'),
@@ -87,9 +80,9 @@ function openModal(modal) {
 	$(modal).modal('show');
 }
 
-// Listens for twilio disconnect and closes Modal
+// Closes Modal after 6 seconds
 function closeModal(modal) {
   setTimeout(function() {
     $(modal).modal('hide');
-  }, 5000);
+  }, 6000);
 }
