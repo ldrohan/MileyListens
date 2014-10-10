@@ -21,36 +21,35 @@ modalOne += "            <div class=\"modal-body\">";
 
 var modalTwo="";
 modalTwo += "<\/div>";
-modalTwo += "            <div class=\"modal-footer\">";
+// modalTwo += "            <div class=\"modal-footer\">";
 // modalTwo += "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close<\/button>";
-modalTwo += "            <\/div>";
+// modalTwo += "            <\/div>";
 modalTwo += "        <\/div>";
 modalTwo += "    <\/div>";
 modalTwo += "  <\/div>";
 
 
-var timeToClose = 4000  
-
+var timeToClose = 0  
+var newData = []
 function getTweets() {
 	$.getJSON( "listening/main.json", function( data ) {
-      var newData = []
-      var length = (data.length)
+      // var newData = []
  	    for (var tweet in data) {
- 	  	 if (data !== null) {
+ 	  	 if (data !== undefined) {
           var currentModal = '#myModal' + tweet;
           newData.push(currentModal);
           var currentTweet = data[tweet];
           $('#tweets').append(modalID + tweet + modalOne + '<li>' + currentTweet + '</li>' + modalTwo);
-  			 openModal(currentModal);
+  			  openModal(currentModal);
           sendVoiceText(currentModal, currentTweet);
-          // closeModal(data,currentModal,timeToClose);
   		  }	else {
   			   alert("Keep listening. She's out there.");
   		  }
   	  }
+      // reversing original data to close modals in correct order
       var reverseData = newData.reverse();
       for (var i in reverseData) {
-        timeToClose += 4000
+        timeToClose += 5000
         closeModal(reverseData[i],timeToClose);
       }
   });
@@ -81,16 +80,14 @@ function sendVoiceText(currentModal, currentTweet) {
 // Actually speaks the tweet, in theory anyway
 function speak(currentTweet) {
   var currentTweet = currentTweet;
-  // Twilio.Device.connect({ 'currentTweet':currentTweet });
 }
 
 
 function openModal(modal) {
 	$(modal).modal('show');
-  
 }
 
-// Closes Modal after 6 seconds
+// Closes Modal after 5 seconds in correct order
 function closeModal(deleteModal,timeToClose) {
     setTimeout(function() {
       $(deleteModal).modal('hide');
