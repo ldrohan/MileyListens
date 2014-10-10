@@ -22,27 +22,37 @@ modalOne += "            <div class=\"modal-body\">";
 var modalTwo="";
 modalTwo += "<\/div>";
 modalTwo += "            <div class=\"modal-footer\">";
-modalTwo += "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close<\/button>";
+// modalTwo += "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close<\/button>";
 modalTwo += "            <\/div>";
 modalTwo += "        <\/div>";
 modalTwo += "    <\/div>";
 modalTwo += "  <\/div>";
 
 
+var timeToClose = 4000  
 
 function getTweets() {
 	$.getJSON( "listening/main.json", function( data ) {
- 	  for (var tweet in data) {
- 	  	if (data !== null) {
-        var currentModal = '#myModal' + tweet;
-        var currentTweet = data[tweet];
-  			$('#tweets').append(modalID + tweet + modalOne + '<li>' + currentTweet + '</li>' + modalTwo);
-  			openModal(currentModal);
-        sendVoiceText(currentModal, currentTweet);
-  		}	else {
-  			 alert("Keep listening. She's out there.");
-  		}
-  	}
+      var newData = []
+      var length = (data.length)
+ 	    for (var tweet in data) {
+ 	  	 if (data !== null) {
+          var currentModal = '#myModal' + tweet;
+          newData.push(currentModal);
+          var currentTweet = data[tweet];
+          $('#tweets').append(modalID + tweet + modalOne + '<li>' + currentTweet + '</li>' + modalTwo);
+  			 openModal(currentModal);
+          sendVoiceText(currentModal, currentTweet);
+          // closeModal(data,currentModal,timeToClose);
+  		  }	else {
+  			   alert("Keep listening. She's out there.");
+  		  }
+  	  }
+      var reverseData = newData.reverse();
+      for (var i in reverseData) {
+        timeToClose += 4000
+        closeModal(reverseData[i],timeToClose);
+      }
   });
 }
 
@@ -66,7 +76,6 @@ function sendVoiceText(currentModal, currentTweet) {
         console.log(data);
     }
   });
-  closeModal(currentModal);
 }
 
 // Actually speaks the tweet, in theory anyway
@@ -78,11 +87,12 @@ function speak(currentTweet) {
 
 function openModal(modal) {
 	$(modal).modal('show');
+  
 }
 
 // Closes Modal after 6 seconds
-function closeModal(modal) {
-  setTimeout(function() {
-    $(modal).modal('hide');
-  }, 6000);
-}
+function closeModal(deleteModal,timeToClose) {
+    setTimeout(function() {
+      $(deleteModal).modal('hide');
+    }, timeToClose);
+  }
