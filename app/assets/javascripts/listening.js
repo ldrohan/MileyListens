@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $('button').click(function() {
     	getTweets();
+      deactivateButton();
     });
 	});
 
@@ -89,7 +90,18 @@ function openModal(modal) {
 
 // Closes Modal after 5 seconds in correct order
 function closeModal(deleteModal,timeToClose) {
+    if(deleteModal === 'myModal0') {
+      activateButton();
+    }
     setTimeout(function() {
       $(deleteModal).modal('hide');
     }, timeToClose);
   }
+
+function deactivateButton(){
+  $('button').removeAttr('disabled', 'disabled');
+}
+
+function activateButton() {
+  $('button').removeAttr('disabled');
+}  
