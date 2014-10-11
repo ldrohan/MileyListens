@@ -40,7 +40,7 @@ function getTweets() {
           var currentModal = '#myModal' + tweet;
           newData.push(currentModal);
           var currentTweet = data[tweet];
-          $('#tweets').append(modalID + tweet + modalOne + '<li>' + currentTweet + '</li>' + modalTwo);
+          $('#tweets').append(modalID + tweet + modalOne + '<li class="modalText">' + currentTweet + '</li>' + modalTwo);
   			  openModal(currentModal);
           sendVoiceText(currentModal, currentTweet);
   		  }	else {
@@ -88,16 +88,16 @@ function openModal(modal) {
 	$(modal).modal('show');
 }
 
-// Closes Modal after 5 seconds in correct order
+// Closes Modal after 5 seconds in correct order and reactivates button
 function closeModal(deleteModal,timeToClose) {
     if(deleteModal === 'myModal0') {
-      activateButton();
+      activateButton(); //reactive button on last tweet closing
     }
     setTimeout(function() {
       $(deleteModal).modal('hide');
     }, timeToClose);
   }
-
+// disables button while modals open
 function deactivateButton(){
   $('button').removeAttr('disabled', 'disabled');
 }
@@ -105,3 +105,4 @@ function deactivateButton(){
 function activateButton() {
   $('button').removeAttr('disabled');
 }  
+
