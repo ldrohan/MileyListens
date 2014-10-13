@@ -32,13 +32,13 @@ class ListeningController < ApplicationController
 			end	
 		end
 
-		respond_with @english_status
+		respond_with @english_status	
 		
 	end
 
 	def voice
 		@speak_tweet = params['tweets']['currentModal']
-		respond_with @speak_tweet
+		respond_with @speak_tweet, :status => :ok
 	end
 
 end	

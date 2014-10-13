@@ -32,9 +32,9 @@ modalTwo += "  <\/div>";
 
 var timeToClose = 0  
 var newData = []
+
 function getTweets() {
 	$.getJSON( "listening/main.json", function( data ) {
-      // var newData = []
  	    for (var tweet in data) {
  	  	 if (data !== undefined) {
           var currentModal = '#myModal' + tweet;
@@ -90,13 +90,14 @@ function openModal(modal) {
 
 // Closes Modal after 5 seconds in correct order and reactivates button
 function closeModal(deleteModal,timeToClose) {
-    if(deleteModal === 'myModal0') {
-      activateButton(); //reactive button on last tweet closing
-    }
-    setTimeout(function() {
-      $(deleteModal).modal('hide');
-    }, timeToClose);
+  if(deleteModal === 'myModal0') {
+    activateButton(); //reactive button on last tweet closing
+    newData = [];
   }
+  setTimeout(function() {
+    $(deleteModal).modal('hide');
+  }, timeToClose);
+}
 // disables button while modals open
 function deactivateButton(){
   $('button').removeAttr('disabled', 'disabled');
