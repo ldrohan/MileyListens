@@ -41,4 +41,10 @@ class ListeningController < ApplicationController
 		respond_with @speak_tweet, :status => :ok
 	end
 
+	def instagram
+		response = Typhoeus.get('https://api.instagram.com/v1/tags/blgtgbg/media/recent?client_id=cd991b00b96e48df8cd295b0d36b9d8d')
+		@instagram_response = response.body
+		respond_with @instagram_response
+	end	
+
 end	

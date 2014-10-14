@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'listening/main' => 'listening#main', as: :main
   get 'listening/static' => 'listening#static', as: :static
   get 'listening/token' => 'listening#token', as: :token 
+  get 'listening/instagram' => 'listening#instagram', as: :instagram 
+  
+
 
   post 'listening/voice' => 'listening#voice', as: :voice
 
@@ -22,7 +25,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  
+
   # Example resource route with options:
   #   resources :products do
   #     member do

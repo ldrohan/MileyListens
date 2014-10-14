@@ -1,9 +1,9 @@
 $( document ).ready(function() {
-    $('button').click(function() {
-    	getTweets();
-      deactivateButton();
-    });
-	});
+  $('button').click(function() {
+    getTweets();
+    deactivateButton();
+  });
+});
 
 var modalID="";
 modalID += "<div id=\"myModal";
@@ -82,7 +82,6 @@ function sendVoiceText(currentModal, currentTweet) {
 function speak(currentTweet) {
   var currentTweet = currentTweet;
 }
-
 
 function openModal(modal) {
 	$(modal).modal('show');
