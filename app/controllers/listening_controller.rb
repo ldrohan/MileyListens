@@ -10,12 +10,13 @@ class ListeningController < ApplicationController
 	def main
 
 		TweetStream.configure do |config|
-  	config.consumer_key       = 'BKVxuRlX7tN8IkF2FPicNJpP2'
-  	config.consumer_secret    = 'QxWhzLUAMtznt96ZPaOWsENFj5YwXnnT63QTXwp9DZ6RW9ATDX'
-  	config.oauth_token        = '21260646-23Ovaksn5ChqfteANQzjQ3uuxdAu8hJCf7NBd8Bfg'
-  	config.oauth_token_secret = 'P4uAkjOyJkkNBOfxigwop0tCsD48174lIajzXeAYiaLbo'
+  	config.consumer_key       = Rails.application.secrets.twitter_consumer_key
+  	config.consumer_secret    = Rails.application.secrets.twitter_consumer_secret
+  	config.oauth_token        = Rails.application.secrets.twitter_oauth_token
+  	config.oauth_token_secret = Rails.application.secrets.twitter_oauth_token_secret
   	config.auth_method        = :oauth
 		end
+
 		# saves all relevant status'
 		@statuses = []
 	
@@ -42,7 +43,8 @@ class ListeningController < ApplicationController
 	end
 
 	def instagram
-		response = Typhoeus.get('https://api.instagram.com/v1/tags/blgtgbg/media/recent?client_id=cd991b00b96e48df8cd295b0d36b9d8d')
+		instID = Rails.application.secrets.instagram_client_id
+		response = Typhoeus.get("https://api.instagram.com/v1/tags/blgtgbg/media/recent?client_id=#{instID}")
 		instagram_response = JSON.parse(response.body)['data']
 	 	
 	 	@pic_link = []
