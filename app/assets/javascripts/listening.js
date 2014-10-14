@@ -106,3 +106,8 @@ function activateButton() {
   $('button').removeAttr('disabled');
 }  
 
+// function modalLoading() {
+//   $('#myModal0').load(function() {
+//     alert('yolo');
+//   });
+// }
