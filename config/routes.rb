@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   get 'listening/token' => 'listening#token', as: :token 
   get 'listening/instagram' => 'listening#instagram', as: :instagram 
   
-
-
   post 'listening/voice' => 'listening#voice', as: :voice
 
 

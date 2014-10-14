@@ -1,28 +1,5 @@
-== README
+This (at some point in the not too distant future) will be a tweet listener using the Twitter API and Instagram API for all things social media realted to the keyword Happy.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Why you may ask? Good question.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Well, mostly I wanted to hack on Twitter and Instagram and work on my Javascript skills, and thought this would be a fun way to do it.

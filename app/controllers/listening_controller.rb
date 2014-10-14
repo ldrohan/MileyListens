@@ -43,8 +43,13 @@ class ListeningController < ApplicationController
 
 	def instagram
 		response = Typhoeus.get('https://api.instagram.com/v1/tags/blgtgbg/media/recent?client_id=cd991b00b96e48df8cd295b0d36b9d8d')
-		@instagram_response = response.body
-		respond_with @instagram_response
-	end	
+		instagram_response = JSON.parse(response.body)['data']
+	 	
+	 	@pic_link = []
+		instagram_response.each do |k|
+			@pic_link << k['link']
+		end
+		respond_with @pic_link	
+	end
 
 end	
