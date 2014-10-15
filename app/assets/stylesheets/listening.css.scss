@@ -27,10 +27,23 @@ h3 {
 	margin-top: 20%;
 }
 
+#introModal {
+	.modal-header {
+		border-bottom: 0px;
+	}
+	.modal-content {
+		background-color: #FBE582;
+		border-radius: 0px;
+		height: 10em;
+	}
+}
+
 #myModal0,
 #myModal2,
 #myModal4,
-#myModal6 {
+#myModal6,
+#myModal8,
+#myModal10 {
 	.modal-header {
 		border-bottom: 0px;
 	}
@@ -44,7 +57,8 @@ h3 {
 #myModal1,
 #myModal3,
 #myModal5,
-#myModal7 {
+#myModal7,
+#myModal9 {
 	.modal-header {
 		border-bottom: 0px;
 	}

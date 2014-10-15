@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+  intromodal();
   $('button').click(function() {
     $('body').append(loadingText);
     getTweets();
@@ -6,8 +7,8 @@ $( document ).ready(function() {
   });
 });
 
-var loadingText = '<p id="loading">Loading...</p>'
 
+var loadingText = '<p id="loading">Loading...</p>'
 var modalID="";
 modalID += "<div id=\"myModal";
 
@@ -26,6 +27,13 @@ modalTwo += "<\/div>";
 modalTwo += "        <\/div>";
 modalTwo += "    <\/div>";
 modalTwo += "  <\/div>";
+
+function intromodal() {
+  $("#introModal").modal('show');
+  setTimeout(function() {
+    $("#introModal").modal('hide');
+  }, 4000);
+}
 
 var timeToClose = 0  
 var newData = []
