@@ -20,7 +20,7 @@ class ListeningController < ApplicationController
 		# saves all relevant status'
 		@statuses = []
 	
-		TweetStream::Client.new.track('Happy') do |status, client|
+		TweetStream::Client.new.track('Happy', 'Happiness') do |status, client|
   		@statuses << status.text
   		client.stop if @statuses.size >= 10	
 		end

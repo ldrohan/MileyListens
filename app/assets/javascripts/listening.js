@@ -53,12 +53,6 @@ function getTweets() {
   });
 }
 
-function getToken() {
-  $.getJSON( "listening/token.json", function ( data ) {
-      return(data);
-  });
-}
-
 function sendVoiceText(currentModal, currentTweet) {
   $.ajax({
       url: ('listening/voice'),

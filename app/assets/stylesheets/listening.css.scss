@@ -22,6 +22,39 @@ h3 {
 	border-radius: 0px;
 	border: none;
 }
+
+.modal-dialog {
+	margin-top: 20%;
+}
+
+#myModal0,
+#myModal2,
+#myModal4,
+#myModal6 {
+	.modal-header {
+		border-bottom: 0px;
+	}
+	.modal-content {
+		background-color: #FF7D47;
+		border-radius: 0px;
+		height: 10em;
+	}
+}
+
+#myModal1,
+#myModal3,
+#myModal5,
+#myModal7 {
+	.modal-header {
+		border-bottom: 0px;
+	}
+	.modal-content {
+		background-color: #FBE582;
+		border-radius: 0px;
+		height: 10em;
+	}
+}
+
 p {
 	margin-top: 10em;
 }
@@ -37,10 +70,4 @@ li {
 #listenbutton {
 	margin-top: 7%;
 }
-
-.modal-dialog { 
-   margin-top: 20%;
- }
-
-
 
