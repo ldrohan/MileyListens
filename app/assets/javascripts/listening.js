@@ -1,14 +1,15 @@
 $( document ).ready(function() {
   $('button').click(function() {
-    $('body').append('<p id="loading">Loading</p>');
+    $('body').append(loadingText);
     getTweets();
     deactivateButton();
   });
 });
 
+var loadingText = '<p id="loading">Loading...</p>'
+
 var modalID="";
 modalID += "<div id=\"myModal";
-
 
 var modalOne="";
 modalOne += "\" class=\"modal fade\">";
@@ -20,13 +21,11 @@ modalOne += "                <h4 class=\"modal-title\">Tweet Happy:<\/h4>";
 modalOne += "            <\/div>";
 modalOne += "            <div class=\"modal-body\">";
 
-
 var modalTwo="";
 modalTwo += "<\/div>";
 modalTwo += "        <\/div>";
 modalTwo += "    <\/div>";
 modalTwo += "  <\/div>";
-
 
 var timeToClose = 0  
 var newData = []

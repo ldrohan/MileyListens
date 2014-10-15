@@ -19,9 +19,15 @@ h3 {
 #listenbutton {
 	background-color: #FBE582;
 	color: #835231;
+	border-radius: 0px;
+	border: none;
 }
 p {
 	margin-top: 10em;
+}
+
+#loading {
+	color: #FF7D47;
 }
 
 li {
@@ -29,7 +35,7 @@ li {
 }
 
 #listenbutton {
-	margin-top: 5%;
+	margin-top: 7%;
 }
 
 .modal-dialog { 
