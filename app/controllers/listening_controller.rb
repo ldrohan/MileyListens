@@ -44,14 +44,14 @@ class ListeningController < ApplicationController
 
 	def instagram
 		instID = Rails.application.secrets.instagram_client_id
-		response = Typhoeus.get("https://api.instagram.com/v1/tags/blgtgbg/media/recent?client_id=#{instID}")
+		response = Typhoeus.get("https://api.instagram.com/v1/tags/happiness/media/recent?client_id=#{instID}")
 		instagram_response = JSON.parse(response.body)['data']
 	 	
 	 	@pic_link = []
 		instagram_response.each do |k|
 			@pic_link << k['link']
 		end
-		respond_with @pic_link	
+		respond_with @pic_link.first(5)	
 	end
 
 end	
