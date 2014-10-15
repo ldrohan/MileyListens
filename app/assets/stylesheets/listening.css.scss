@@ -23,6 +23,13 @@ h3 {
 	border: none;
 }
 
+button:focus,
+button:active,
+button:hover {
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+
 .modal-dialog {
 	margin-top: 20%;
 }
