@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get 'listening/static' => 'listening#static', as: :static
   get 'listening/token' => 'listening#token', as: :token 
   get 'listening/instagram' => 'listening#instagram', as: :instagram 
-  
-  post 'listening/voice' => 'listening#voice', as: :voice
 
+  post 'listening/voice' => 'listening#voice', as: :voice
+  post 'listening/inst_pics' => 'listening#inst_pics', as: :inst_pics
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

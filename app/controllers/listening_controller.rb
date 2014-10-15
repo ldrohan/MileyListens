@@ -54,4 +54,14 @@ class ListeningController < ApplicationController
 		respond_with @pic_link.first(5)	
 	end
 
+	def inst_pics
+		pics_array = params['links']
+
+		@embed_array = []
+		pics_array.each do |link|
+			@embed_array.push(Typhoeus.get("http://api.instagram.com/oembed?url=#{link}"))
+		end
+		respond_with @embed_array	
+	end	
+
 end	
