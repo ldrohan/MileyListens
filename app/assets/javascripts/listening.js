@@ -1,5 +1,6 @@
 $( document ).ready(function() {
   $('button').click(function() {
+    $('body').append('<p id="loading">Loading</p>');
     getTweets();
     deactivateButton();
   });
@@ -15,16 +16,13 @@ modalOne += "    <div class=\"modal-dialog\">";
 modalOne += "        <div class=\"modal-content\">";
 modalOne += "            <div class=\"modal-header\">";
 modalOne += "                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;<\/button>";
-modalOne += "                <h4 class=\"modal-title\">Talkin Bout Miley:<\/h4>";
+modalOne += "                <h4 class=\"modal-title\">Tweet Happy:<\/h4>";
 modalOne += "            <\/div>";
 modalOne += "            <div class=\"modal-body\">";
 
 
 var modalTwo="";
 modalTwo += "<\/div>";
-// modalTwo += "            <div class=\"modal-footer\">";
-// modalTwo += "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close<\/button>";
-// modalTwo += "            <\/div>";
 modalTwo += "        <\/div>";
 modalTwo += "    <\/div>";
 modalTwo += "  <\/div>";
@@ -84,6 +82,7 @@ function speak(currentTweet) {
 }
 
 function openModal(modal) {
+  $('#loading').remove();
 	$(modal).modal('show');
 }
 
@@ -105,9 +104,3 @@ function deactivateButton(){
 function activateButton() {
   $('button').removeAttr('disabled');
 }  
-
-// function modalLoading() {
-//   $('#myModal0').load(function() {
-//     alert('yolo');
-//   });
-// }
