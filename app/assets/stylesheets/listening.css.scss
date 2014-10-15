@@ -12,8 +12,8 @@ body {
 .wide {
   width:100%;
   height:450px;
-  background-image:url('http://photos-h.ak.instagram.com/hphotos-ak-xaf1/10723813_543519742450511_1812608727_n.jpg');
-  background-size:cover;
+  background-image:url('http://images.viralnova.com/000/031/959/desktop-1406691557.png');
+  background-size:contain;
 }
 
 .wide img {
@@ -35,13 +35,13 @@ body {
   text-align:center;
 }
 
-h1 {
+/*h1 {
 	color: #FF7D47;
 }
 
 h3 {
 	color: #A5AF3F;
-}
+}*/
 
 /*button styling*/
 #listenbutton {
