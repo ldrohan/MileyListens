@@ -2,7 +2,6 @@ $( document ).ready(function() {
 	getInstagram();
 });
 
-var pictureLinks = []
 function getInstagram() {
   $.getJSON( "listening/instagram.json", function ( data ) {
   	var allEmbedLinks = []

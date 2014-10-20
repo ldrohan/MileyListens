@@ -35,7 +35,7 @@ function intromodal() {
   $("#introModal").modal('show');
   setTimeout(function() {
     $("#introModal").modal('hide');
-  }, 4000);
+  }, 3000);
 }
 
 var timeToClose = 0  
