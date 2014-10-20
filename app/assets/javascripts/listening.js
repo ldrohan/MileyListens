@@ -1,10 +1,13 @@
 $( document ).ready(function() {
   intromodal();
-  $('button').click(function() {
+  $('#listenbutton').click(function() {
     $('body').append(loadingText);
     getTweets();
     deactivateButton();
   });
+  $('#aboutButton').click(function(){
+    openModal("#aboutModal");
+  })
 });
 
 

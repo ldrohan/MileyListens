@@ -24,12 +24,12 @@ body {
   color:#fff;
   font-weight:800;
   font-size:17pt;
-  padding:25px;
+  padding:20px;
   text-align:center;
 }
 
 .line {
-  padding-top:20px;
+  padding-top:28px;
   white-space:no-wrap;
   overflow:hidden;
   text-align:center;
@@ -121,3 +121,34 @@ li {
 	margin-top: 10%;
 }
 
+#github {
+	float: left;
+}
+
+#personalsite {
+	float: right;
+}
+
+/*CarouselCSS*/
+
+.item {
+    background: #333;    
+    text-align: center;
+    height: 450px !important;
+}
+.carousel {
+    margin-top: 0px;
+    -webkit-transform-style: preserve-3d;
+}
+
+a {
+	-webkit-transform-style: preserve-3d;
+}
+
+#myCarousel {
+	-webkit-transform-style: preserve-3d;
+}
+
+.carousel-inner {
+	-webkit-transform-style: preserve-3d;
+}

@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li id="aboutButton"><a href="#about">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#">Username</a></li> -->
@@ -20,10 +20,49 @@
   </div>
 </div>
 
-<div class="wide">
-    <div class="col-xs-5 line"><hr></div>
+<!-- <div class="wide">
+ -->  <div id="myCarousel" class="carousel slide" data-interval="4000" data-ride="carousel">
+      <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+       <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div id="slider1" class="active item">
+                <h2>Slide 1</h2>
+                <div class="carousel-caption">
+                  <h3>First slide label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div id="slider2" class="item">
+                <h2>Slide 2</h2>
+                <div class="carousel-caption">
+                  <h3>Second slide label</h3>
+                  <p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+                </div>
+            </div>
+            <div id="slider3" class="item">
+                <h2>Slide 3</h2>
+                <div class="carousel-caption">
+                  <h3>Third slide label</h3>
+                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+<!--     </div>
+ -->    <!-- <div class="col-xs-5 line"><hr></div>
     <div class="col-xs-2 logo">Streaming Happiness</div>
-    <div class="col-xs-5 line"><hr></div>
+    <div class="col-xs-5 line"><hr></div> -->
 </div>
 
 <div class="container">
@@ -47,4 +86,19 @@
         </div>
     </div>
 </div>
+
+<div id="aboutModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">About<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div>  
+            <div class="modal-body">
+                <li class="modalText">Hi! Thanks for visiting Streaming Happiness. This project is a bit of an odd conglomeration of a few API's. The backgrounds you see at the top of the page are what Instagram users around the world have tagged as happiness, the Tweets are the same. I thought this would be a cool way to see what people post about happiness on social media. Take a few minutes and check it out; the results are interesting. </li>
+            </div>
+            <div class="modal-footer">
+                <a id="github" href="http://www.github.com/ldrohan">GitHub</a>  <a id="personalsite" href="http://ldrohan.github.io">Personal Site</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
