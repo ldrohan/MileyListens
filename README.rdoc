@@ -1,5 +1,5 @@
 This (at some point in the not too distant future) will be a tweet listener using the Twitter API and Instagram API for all things social media realted to the keyword Happy.
 
-Why you may ask? Good question.
+Why, you may ask? Good question.
 
 Well, mostly I wanted to hack on Twitter and Instagram and work on my Javascript skills, and thought this would be a fun way to do it.
