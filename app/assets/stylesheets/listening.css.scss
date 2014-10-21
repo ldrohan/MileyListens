@@ -9,7 +9,22 @@ body {
 	padding-top: 50px;
 }
 
-.logo {
+.navbar-brand {
+  float: none;
+ }
+
+.navbar-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+  	height:100%;
+}
+
+
+/*.logo {
   color:#fff;
   font-weight:800;
   font-size:17pt;
@@ -22,7 +37,7 @@ body {
   white-space:no-wrap;
   overflow:hidden;
   text-align:center;
-}
+}*/
 
 /*button styling*/
 #listenbutton {
@@ -67,12 +82,6 @@ button:hover {
 		color: blue;
 		padding:15px; 
 	}
-	/*#github {
-		float: left;
-	}
-	#personalsite {
-		float: right;
-	}*/
 }
 
 #introModal {
@@ -158,14 +167,10 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 .carousel-caption {
 	font-size: 1.3em;
-/*	max-height: 30%;
-	background-color: black;
-	opacity: .5;*/
 }
 
 a {
 	text-decoration: none;
-	-webkit-transform-style: preserve-3d;
 }
 
 a:link {
@@ -178,12 +183,4 @@ a:visited {
 
 a:hover {
 	text-decoration: none;
-}
-
-#myCarousel {
-	-webkit-transform-style: preserve-3d;
-}
-
-.carousel-inner {
-	-webkit-transform-style: preserve-3d;
 }
