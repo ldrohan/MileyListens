@@ -24,14 +24,6 @@ body {
   text-align:center;
 }
 
-/*h1 {
-	color: #FF7D47;
-}
-
-h3 {
-	color: #A5AF3F;
-}*/
-
 /*button styling*/
 #listenbutton {
 	background-color: #FBE582;
@@ -57,10 +49,15 @@ button:hover {
 		border-bottom: 0px;
 	}
 	.modal-content {
-		background-color: #FF7D47;
+		background-color: rgba(255,255,255,.85);
+		opacity: .8;
+		border-radius: 0px;
 	}
 	.modal-footer {
 		border-top: none;
+	}
+	#aboutpic {
+		/*overflow: hidden;*/
 	}
 }
 
@@ -135,7 +132,7 @@ li {
 .item {
 	  background: #333;    
     text-align: center;
-    height: 450px !important;
+    height: 625px !important;
 }
 .carousel {
     margin-top: 30px;
