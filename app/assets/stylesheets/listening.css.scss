@@ -11,7 +11,18 @@ body {
 
 .navbar-brand {
   float: none;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 1.7em;
+  color: white;
  }
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+	margin-left: 0px;
+}
+
+.navbar-brand:active {
+	color:white;
+}
 
 .navbar-center {
     position: absolute;
@@ -22,22 +33,6 @@ body {
     margin: auto;
   	height:100%;
 }
-
-
-/*.logo {
-  color:#fff;
-  font-weight:800;
-  font-size:17pt;
-  padding:20px;
-  text-align:center;
-}
-
-.line {
-  padding-top:28px;
-  white-space:no-wrap;
-  overflow:hidden;
-  text-align:center;
-}*/
 
 /*button styling*/
 #listenbutton {
