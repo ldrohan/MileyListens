@@ -50,15 +50,29 @@ button:hover {
 	}
 	.modal-content {
 		background-color: rgba(255,255,255,.85);
-		opacity: .8;
 		border-radius: 0px;
 	}
 	.modal-footer {
 		border-top: none;
+		text-align: center;
 	}
-	#aboutpic {
-		/*overflow: hidden;*/
+	.col-md-5 {
+		padding-right: 1px;
 	}
+	.col-md-7 {
+		padding-top: 8px;
+		padding-left: 1px;
+	}
+	a {
+		color: blue;
+		padding:15px; 
+	}
+	/*#github {
+		float: left;
+	}
+	#personalsite {
+		float: right;
+	}*/
 }
 
 #introModal {
@@ -119,41 +133,51 @@ li {
 	margin-top: 10%;
 }
 
-#github {
-	float: left;
-}
 
-#personalsite {
-	float: right;
-}
 
 /*CarouselCSS*/
 
 .item {
-	  background: #333;    
-    text-align: center;
-    height: 625px !important;
+	background: #333;    
+  text-align: center;
+  height: 625px !important;
 }
 .carousel {
-    margin-top: 30px;
-    width: 50%;
-    margin-left: 25%;
-    -webkit-transform-style: preserve-3d;
+  margin-top: 30px;
+  width: 50%;
+  margin-left: 25%;
+  -webkit-transform-style: preserve-3d;
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
-margin-top: 0px;
-margin-bottom: 10px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	background-color: rgba(0,0,0,0.3);
+	padding: 3px;
 }
 
-/*.carousel-caption {
-	max-height: 30%;
+.carousel-caption {
+	font-size: 1.3em;
+/*	max-height: 30%;
 	background-color: black;
-	opacity: .5;
-}*/
+	opacity: .5;*/
+}
 
 a {
+	text-decoration: none;
 	-webkit-transform-style: preserve-3d;
+}
+
+a:link {
+	color: white;
+}
+
+a:visited {
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 #myCarousel {
