@@ -19,6 +19,7 @@ function getEmbedLink(link, sliderNumber) {
     url: "http://api.instagram.com/oembed?url=" + link,
     dataType: 'jsonp',
     success: function(dataJsonp){
+    	console.log(dataJsonp);
        var embedLink = dataJsonp['url'];
        var author_name = dataJsonp['author_name']
        var author_url = dataJsonp['author_url']
