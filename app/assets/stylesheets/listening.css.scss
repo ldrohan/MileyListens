@@ -40,9 +40,10 @@ body {
 	max-width: 1024px;
 	min-width: 720px;
 	border: 1px solid black;
+	border-right: 2px solid black;
 	border-radius: 4px 4px 0 0;
 	margin-top: 35px;
-	background-color: rgba(255,125,71,1);
+	background-color: #333;
 }
 
 #buttonwrapper {
@@ -51,8 +52,9 @@ body {
 	max-width: 1024px;
 	min-width: 720px;
 	border: 1px solid black;
+	border-right: 2px solid black;
 	border-top: 0px;
-	background-color: rgba(131,82,49,1);
+	background-color: #e5dfdf;
 	padding-bottom: 130px;
 }
 /*button styling*/
@@ -60,7 +62,7 @@ body {
 	background-color: #FBE582;
 	color: #835231;
 	border-radius: 0px;
-	border: none;
+	border: 1;
 }
 
 button:focus,
@@ -168,10 +170,15 @@ li {
   height: 625px !important;
 }
 .carousel {
-  margin-top: 30px;
   width: 50%;
   margin-left: 25%;
   -webkit-transform-style: preserve-3d;
+}
+
+.carousel-inner {
+	border:1px solid black;
+	border-bottom: 0px;
+	border-right:2px solid black;
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
