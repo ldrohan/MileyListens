@@ -2,4 +2,4 @@ This (at some point in the not too distant future) will be a tweet listener usin
 
 Why, you may ask? Good question.
 
-Well, mostly I wanted to hack on Twitter and Instagram and work on my Javascript skills, and thought this would be a fun way to do it.
+Well, mostly I wanted to hack on Twitter and Instagram whilst working on my Javascript skills, and thought this would be a fun way to do it.
